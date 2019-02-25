@@ -1,12 +1,14 @@
 # simpleSB
-Tutorial Install:
-<br><a href="http://www.youtube.com/watch?feature=player_embedded&v=bKfk7ek91iU
-" target="_blank"><img src="http://img.youtube.com/vi/bKfk7ek91iU/0.jpg" 
-alt="Tutorial Install" width="240" height="180" border="10" /></a>
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=wNYsqSFsGxU
-" target="_blank"><img src="http://img.youtube.com/vi/wNYsqSFsGxU/0.jpg" 
-alt="Tutorial Install" width="240" height="180" border="10" /></a>
+Tutorial Install di Termux:
+1. apt install && apt upgrade
+2. apt install python
+3. apt install git
+4. pip3 install rsa
+5. pip3 install requests
+6. pip3 install thrift
+7. git clone https://github.com/Flushuine/simpleSB
+8. cd simpleSB
+9. python sb.py
 
 <hr><br>
 Command : <br> 
@@ -18,4 +20,5 @@ tagall      = Tag Semua Member dalam Group <br>
 ceksider    = Mengecek CCTV <br>
 offread     = Tampilkan CCTV <br>
 <hr>
+
 source : linepy by https://github.com/fadhiilrachman/
