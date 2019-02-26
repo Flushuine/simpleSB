@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from linepy import *
-import json, time, random
+import json, time, random, sys
 
 client = LineClient()
 #client = LineClient(authToken='AUTH TOKEN')
@@ -118,7 +118,7 @@ while True:
                                         nm5 += [nama[m]]
                                     client.mention(msg.to, nm5)             
                                 client.sendText(receiver, "Members :"+str(jml))
-                            elif text.lower() == 'ceksider':
+                            elif text.lower() == 'cek sider':
                                 try:
                                     del cctv['point'][msg.to]
                                     del cctv['sidermem'][msg.to]
@@ -133,7 +133,11 @@ while True:
                                     cctv['cyduk'][msg.to]=False
                                     client.sendText(msg.to, cctv['sidermem'][msg.to])
                                 else:
-                                    client.sendText(msg.to, "Heh belom di Set")
+                                    client.sendText(msg.to, "Nyalain dulu sider checkernya")
+                            elif text.lower() == 'shutdown':
+                                client.sendText(msg.to, "Shutting Down...")
+                                sys.exit()
+                                
                 except Exception as e:
                     client.log("[SEND_MESSAGE] ERROR : " + str(e))
 
