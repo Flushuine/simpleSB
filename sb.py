@@ -119,7 +119,7 @@ while True:
                                         nm5 += [nama[m]]
                                     client.mention(msg.to, nm5)             
                                 client.sendText(receiver, "Members :"+str(jml))
-                            elif text.lower() == 'scan':
+                            elif text.lower() == 'cek sider':
                                 try:
                                     del cctv['point'][msg.to]
                                     del cctv['sidermem'][msg.to]
@@ -129,13 +129,13 @@ while True:
                                 cctv['point'][msg.to] = msg.id
                                 cctv['sidermem'][msg.to] = ""
                                 cctv['cyduk'][msg.to]=True
-                            elif text.lower() == 'sider':
+                            elif text.lower() == 'list sider':
                                 if msg.to in cctv['point']:
                                     cctv['cyduk'][msg.to]=False
                                     client.sendText(msg.to, cctv['sidermem'][msg.to])
                                 else:
-                                    client.sendText(msg.to, "Please scan before run this command")
-                            elif "scan" in msg.text.lower():
+                                    client.sendText(msg.to, "Nyalain dulu sider checkernya")
+                            elif "cek sider" in msg.text.lower():
                                 try:
                                     del cctv['point'][msg.to]
                                     del cctv['sidermem'][msg.to]
@@ -145,12 +145,7 @@ while True:
                                 cctv['point'][msg.to] = msg.id
                                 cctv['sidermem'][msg.to] = ""
                                 cctv['cyduk'][msg.to]=True
-                            elif "sider" in msg.text.lower():
-                                if msg.to in cctv['point']:
-                                    cctv['cyduk'][msg.to]=False
-                                    client.sendText(receiver, cctv['sidermem'][msg.to])
-                                else:
-                                    client.sendText(receiver, "Please scan before run this command")
+                            elif "list sider"
                             elif text.lower() == 'shutdown':
                                 client.sendText(msg.to, "Shutting Down...")
                                 sys.exit()
@@ -166,9 +161,9 @@ while True:
                             if Name in cctv['sidermem'][op.param1]:
                                 pass
                             else:
-                                cctv['sidermem'][op.param1] += "\nSider Spotted: " + Name
-                                #pref=['Sider Spotted','Another Sider']
-                                client.sendText("Read Point has been set")
+                                cctv['sidermem'][op.param1] += "\n~ " + Name
+                                pref=['Sider Spotted','Another Sider']
+                                client.sendText(op.param1, str(random.choice(pref))+' '+Name)
                         else:
                             pass
                     else:
