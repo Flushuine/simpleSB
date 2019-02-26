@@ -145,7 +145,12 @@ while True:
                                 cctv['point'][msg.to] = msg.id
                                 cctv['sidermem'][msg.to] = ""
                                 cctv['cyduk'][msg.to]=True
-                            elif "list sider"
+                            elif "list sider" in msg.text.lower():
+                                if msg.to in cctv['point']:
+                                    cctv['cyduk'][msg.to]=False
+                                    client.sendText(msg.to, cctv['sidermem'][msg.to])
+                                else:
+                                    client.sendText(msg.to, "Nyalain dulu sider checkernya")
                             elif text.lower() == 'shutdown':
                                 client.sendText(msg.to, "Shutting Down...")
                                 sys.exit()
