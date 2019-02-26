@@ -28,7 +28,7 @@ while True:
             receiver = msg.to
             sender = msg._from
             cek = 0
-            if cek == 0:
+            if msg.text.lower() == "hai gainbot" && cek == 0:
                 num = randint(0,4)
                 client.sendText(receiver, num)
                 pref=['bAmBANG', 'MaLiH', 'kUntal kUntUl', 'BamBANG', 'MAlih']
@@ -42,9 +42,7 @@ while True:
                     if msg.text != None:
                         if msg.toType == 2:
                             may = client.getProfile().mid
-                            if msg.text.lower() == "hai gainbot":
-                                client.sendText(receiver, "Ashiyyapp!")
-                            elif msg.text.lower() == "scan":
+                            if msg.text.lower() == "scan":
                                 client.sendText(receiver, "Done!")
                                 try:
                                     del cctv['point'][msg.to]
