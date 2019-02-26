@@ -44,6 +44,8 @@ while True:
                             contact = client.getContact(sender)
                             if text.lower() == 'me':
                                 client.sendMessage(receiver, None, contentMetadata={'mid': sender}, contentType=13)
+                            elif receiver.lower() == 'hi gainbot':
+                                client.sendText(receiver, "Wassap!")
                             elif text.lower() == 'speed':
                                 start = time.time()
                                 client.sendText(receiver, "TestSpeed")
