@@ -22,13 +22,13 @@ while True:
     try:
         ops=poll.singleTrace(count=50)
         for op in ops:
-            msg = op.message
-            text = msg.text
-            msg_id = msg.id
-            receiver = msg.to
-            sender = msg._from
-            cek = 0
             if op.type == 26:
+                msg = op.message
+                text = msg.text
+                msg_id = msg.id
+                receiver = msg.to
+                sender = msg._from
+                cek = 0
                 if msg.text != None:
                     if msg.toType == 2:
                         if msg.text.lower() == "hai gainbot" and cek == 0:
@@ -64,6 +64,11 @@ while True:
                     else:
                         pass
                 elif op.type == 25:
+                    msg = op.message
+                    text = msg.text
+                    msg_id = msg.id
+                    receiver = msg.to
+                    sender = msg._from
                     try:
                         if msg.contentType == 0:
                             if msg.toType == 2:
