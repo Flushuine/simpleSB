@@ -148,9 +148,9 @@ while True:
                             elif "sider" in msg.text.lower():
                                 if msg.to in cctv['point']:
                                     cctv['cyduk'][msg.to]=False
-                                    client.sendText(msg.to, cctv['sidermem'][msg.to])
+                                    client.sendText(receiver, cctv['sidermem'][msg.to])
                                 else:
-                                    client.sendText(msg.to, "Please scan before run this command")
+                                    client.sendText(receiver, "Please scan before run this command")
                             elif text.lower() == 'shutdown':
                                 client.sendText(msg.to, "Shutting Down...")
                                 sys.exit()
