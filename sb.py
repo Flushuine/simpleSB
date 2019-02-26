@@ -33,11 +33,11 @@ while True:
                                     del cctv['point'][msg.to]
                                     del cctv['sidermem'][msg.to]
                                     del cctv['cyduk'][msg.to]
-                                except:
+                            except:
                                     pass
-                                cctv['point'][msg.to] = msg.id
-                                cctv['sidermem'][msg.to] = ""
-                                cctv['cyduk'][msg.to]=True
+                            cctv['point'][msg.to] = msg.id
+                            cctv['sidermem'][msg.to] = ""
+                            cctv['cyduk'][msg.to]=True
                         elif "list sider" in msg.text.lower():
                                 if msg.to in cctv['point']:
                                     cctv['cyduk'][msg.to]=False
