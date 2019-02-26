@@ -168,7 +168,7 @@ while True:
                             else:
                                 cctv['sidermem'][op.param1] += Name + "\n"
                                 #pref=['Sider Spotted','Another Sider']
-                                client.sendText(msg.to, "Read Point has been set")
+                                client.sendText(op.param1, str(random.choice(pref))+' '+Name)
                         else:
                             pass
                     else:
