@@ -128,7 +128,7 @@ while True:
                                 cctv['point'][msg.to] = msg.id
                                 cctv['sidermem'][msg.to] = ""
                                 cctv['cyduk'][msg.to]=True
-                            elif text.lower() == 'offread':
+                            elif text.lower() == 'list sider':
                                 if msg.to in cctv['point']:
                                     cctv['cyduk'][msg.to]=False
                                     client.sendText(msg.to, cctv['sidermem'][msg.to])
