@@ -25,9 +25,31 @@ while True:
                 msg = op.message
                 if msg.text != None:
                     if msg.toType == 2:
+                        msg = op.message
+                        text = msg.text
+                        msg_id = msg.id
+                        receiver = msg.to
+                        sender = msg._from
                         may = client.getProfile().mid
                         if "hai gainbot" in msg.text.lower():
                             client.sendText(receiver, "Ashiyyapp!")
+                        elif "scan" in msg.text.lower():
+                            client.sendText(receiver, "Done!")
+                            try:
+                                del cctv['point'][msg.to]
+                                    del cctv['sidermem'][msg.to]
+                                    del cctv['cyduk'][msg.to]
+                            except:
+                                pass
+                            cctv['point'][receiver] = msg.id
+                            cctv['sidermem'][receiver] = ""
+                            cctv['cyduk'][receiver]=True
+                        elif "sider" in msg.text.lower():
+                                if msg.to in cctv['point']:
+                                    cctv['cyduk'][msg.to]=False
+                                    client.sendText(receiver, cctv['sidermem'][msg.to])
+                                else:
+                                    client.sendText(msg.to, "Please scan your read point first")
                         else:
                             pass
                 else:
@@ -120,6 +142,7 @@ while True:
                                     client.mention(msg.to, nm5)             
                                 client.sendText(receiver, "Members :"+str(jml))
                             elif text.lower() == 'scan':
+                                client.sendText(msg.to, "Done!")
                                 try:
                                     del cctv['point'][msg.to]
                                     del cctv['sidermem'][msg.to]
@@ -134,23 +157,7 @@ while True:
                                     cctv['cyduk'][msg.to]=False
                                     client.sendText(msg.to, "Sider Spotted:\n" + cctv['sidermem'][msg.to])
                                 else:
-                                    client.sendText(msg.to, "Nyalain dulu sider checkernya")
-                            elif "scan" in msg.text.lower():
-                                try:
-                                    del cctv['point'][msg.to]
-                                    del cctv['sidermem'][msg.to]
-                                    del cctv['cyduk'][msg.to]
-                                except:
-                                    pass
-                                cctv['point'][receiver] = msg.id
-                                cctv['sidermem'][receiver] = ""
-                                cctv['cyduk'][receiver]=True
-                            elif "sider" in msg.text.lower():
-                                if msg.to in cctv['point']:
-                                    cctv['cyduk'][msg.to]=False
-                                    client.sendText(receiver, cctv['sidermem'][msg.to])
-                                else:
-                                    client.sendText(msg.to, "Please set your read point first")
+                                    client.sendText(msg.to, "Please scan your read point first")
                             elif text.lower() == 'shutdown':
                                 client.sendText(msg.to, "Shutting Down...")
                                 sys.exit()
@@ -168,7 +175,7 @@ while True:
                             else:
                                 cctv['sidermem'][op.param1] += Name + "\n"
                                 #pref=['Sider Spotted','Another Sider']
-                                client.sendText(op.param1, str(random.choice(pref))+' '+Name)
+                                #client.sendText(op.param1, str(random.choice(pref))+' '+Name)
                         else:
                             pass
                     else:
