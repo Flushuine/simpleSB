@@ -28,7 +28,7 @@ while True:
             receiver = msg.to
             sender = msg._from
             cek = 0
-            if msg.text.lower() == "hai gainbot" && cek == 0:
+            if msg.text.lower() == "hai gainbot" and cek == 0:
                 num = randint(0,4)
                 client.sendText(receiver, num)
                 pref=['bAmBANG', 'MaLiH', 'kUntal kUntUl', 'BamBANG', 'MAlih']
