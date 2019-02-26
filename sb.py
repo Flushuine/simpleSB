@@ -31,13 +31,16 @@ while True:
                 cek = 0
                 if msg.text != None:
                     if msg.toType == 2:
-                        if msg.text.lower() == "hai gainbot" and cek == 0:
-                            num = randint(0,4)
-                            client.sendText(receiver, num)
-                            pref=['bAmBANG', 'MaLiH', 'kUntal kUntUl', 'BamBANG', 'MAlih']
-                            client.sendText(receiver, "Please type '" + pref[num] + "' before continue")
-                            if msg.text == pref[num]:
-                                cek = 1
+                        if msg.text.lower() == "hai gainbot":
+                            if cek == 0:
+                                num = randint(0,4)
+                                client.sendText(receiver, num)
+                                pref=['bAmBANG', 'MaLiH', 'kUntal kUntUl', 'BamBANG', 'MAlih']
+                                client.sendText(receiver, "Please type '" + pref[num] + "' before continue")
+                                if msg.text == pref[num]:
+                                    cek = 1
+                                else:
+                                    pass
                             else:
                                 pass
                         else:
