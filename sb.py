@@ -35,7 +35,7 @@ while True:
                             if cek == 0:
                                 num = randint(0,4)
                                 client.sendText(receiver, num)
-                                pref=['bAmBANG', 'MaLiH', 'kUntal kUntUl', 'BamBANG', 'MAlih']
+                                #pref=['bAmBANG', 'MaLiH', 'kUntal kUntUl', 'BamBANG', 'MAlih']
                                 client.sendText(receiver, "Please type '" + pref[num] + "' before continue")
                                 if msg.text == pref[num]:
                                     cek = 1
