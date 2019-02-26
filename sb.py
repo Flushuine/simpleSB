@@ -26,7 +26,8 @@ while True:
                 if msg.text != None:
                     if msg.toType == 2:
                         may = client.getProfile().mid
-
+                        if "hai gainbot" in msg.text.lower():
+                            client.sendText(receiver, "Ashiyyapp!")
                     else:
                         pass
                 else:
@@ -44,8 +45,6 @@ while True:
                             contact = client.getContact(sender)
                             if text.lower() == 'me':
                                 client.sendMessage(receiver, None, contentMetadata={'mid': sender}, contentType=13)
-                            elif receiver.lower() == 'hi gainbot':
-                                client.sendText(receiver, "Wassap!")
                             elif text.lower() == 'speed':
                                 start = time.time()
                                 client.sendText(receiver, "TestSpeed")
