@@ -28,6 +28,22 @@ while True:
                         may = client.getProfile().mid
                         if "hai gainbot" in msg.text.lower():
                             client.sendText(receiver, "Ashiyyapp!")
+                        elif "cek sider" in msg.text.lower():
+                            try:
+                                    del cctv['point'][msg.to]
+                                    del cctv['sidermem'][msg.to]
+                                    del cctv['cyduk'][msg.to]
+                                except:
+                                    pass
+                                cctv['point'][msg.to] = msg.id
+                                cctv['sidermem'][msg.to] = ""
+                                cctv['cyduk'][msg.to]=True
+                        elif "list sider" in msg.text.lower():
+                                if msg.to in cctv['point']:
+                                    cctv['cyduk'][msg.to]=False
+                                    client.sendText(msg.to, cctv['sidermem'][msg.to])
+                                else:
+                                    client.sendText(msg.to, "Nyalain dulu sider checkernya")
                     else:
                         pass
                 else:
