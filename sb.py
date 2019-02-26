@@ -45,21 +45,21 @@ while True:
                             cctv['cyduk'][msg.to]=True
 
                             try:
-                                 if cctv['cyduk'][op.param1]==True:
+                                if cctv['cyduk'][op.param1]==True:
                                     if op.param1 in cctv['point']:
                                         Name = client.getContact(op.param2).displayName
                                         if Name in cctv['sidermem'][op.param1]:
-                                         pass
+                                        pass
                                         else:
                                             cctv['sidermem'][op.param1] += "\n~ " + Name
                                             pref=['Sider Spotted','Another Sider']
                                             client.sendText(op.param1, str(random.choice(pref))+' '+Name)
                                     else:
-                                            pass
-                                else:
                                         pass
-                            except:
+                                else:
                                     pass
+                            except:
+                                pass
 
                         elif "list sider" in msg.text.lower():
                             if msg.to in cctv['point']:
