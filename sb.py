@@ -31,9 +31,9 @@ while True:
                         receiver = msg.to
                         sender = msg._from
                         may = client.getProfile().mid
-                        if "hai gainbot" in msg.text.lower():
+                        if msg.text.lower() == "hai gainbot":
                             client.sendText(receiver, "Ashiyyapp!")
-                        elif "scan" in msg.text.lower():
+                        elif msg.text.lower() == "scan":
                             client.sendText(receiver, "Done!")
                             try:
                                 del cctv['point'][msg.to]
@@ -44,7 +44,7 @@ while True:
                             cctv['point'][receiver] = msg.id
                             cctv['sidermem'][receiver] = ""
                             cctv['cyduk'][receiver]=True
-                        elif "sider" in msg.text.lower():
+                        elif msg.text.lower() == "sider":
                                 if msg.to in cctv['point']:
                                     cctv['cyduk'][msg.to]=False
                                     client.sendText(receiver, "Sider Spotted:\n" + cctv['sidermem'][msg.to])
