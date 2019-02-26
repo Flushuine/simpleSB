@@ -44,29 +44,32 @@ while True:
                             cctv['sidermem'][msg.to] = ""
                             cctv['cyduk'][msg.to]=True
 
-                            try:
-                                if cctv['cyduk'][op.param1]==True:
-                                    if op.param1 in cctv['point']:
-                                        Name = client.getContact(op.param2).displayName
-                                        if Name in cctv['sidermem'][op.param1]:
-                                            pass
-                                        else:
-                                            cctv['sidermem'][op.param1] += "\n~ " + Name
-                                            pref=['Sider Spotted','Another Sider']
-                                            client.sendText(op.param1, str(random.choice(pref))+' '+Name)
-                                    else:
-                                        pass
-                                else:
-                                    pass
-                            except:
-                                pass
-
                         elif "list sider" in msg.text.lower():
                             if msg.to in cctv['point']:
                                 cctv['cyduk'][msg.to]=False
                                 client.sendText(msg.to, cctv['sidermem'][msg.to])
                             else:
                                 client.sendText(msg.to, "Nyalain dulu sider checkernya")
+                    elif op.type == OpType.NOTIFIED_READ_MESSAGE:
+                                try:
+                                    if cctv['cyduk'][op.param1]==True:
+                                        if op.param1 in cctv['point']:
+                                            Name = client.getContact(op.param2).displayName
+                                            if Name in cctv['sidermem'][op.param1]:
+                                                pass
+                                            else:
+                                                cctv['sidermem'][op.param1] += "\n~ " + Name
+                                                pref=['Sider Spotted','Another Sider']
+                                                client.sendText(op.param1, str(random.choice(pref))+' '+Name)
+                                        else:
+                                            pass
+                                    else:
+                                        pass
+                                except:
+                                    pass
+
+                            else:
+                                pass
                     else:
                         pass
                 else:
@@ -88,7 +91,7 @@ while True:
                                 start = time.time()
                                 client.sendText(receiver, "TestSpeed")
                                 elapsed_time = time.time() - start
-                                client.sendText(receiver, "%sdetik" % (elapsed_time))
+                                client.sendText(receiver, "%s detik" % (elapsed_time))
                             elif 'spic' in text.lower():
                                 try:
                                     key = eval(msg.contentMetadata["MENTION"])
