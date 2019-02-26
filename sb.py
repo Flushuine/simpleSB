@@ -49,7 +49,7 @@ while True:
                                     if op.param1 in cctv['point']:
                                         Name = client.getContact(op.param2).displayName
                                         if Name in cctv['sidermem'][op.param1]:
-                                        pass
+                                            pass
                                         else:
                                             cctv['sidermem'][op.param1] += "\n~ " + Name
                                             pref=['Sider Spotted','Another Sider']
