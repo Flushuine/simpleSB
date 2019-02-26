@@ -7,8 +7,11 @@ Tutorial Install di Termux:
 5. pip3 install requests
 6. pip3 install thrift
 7. git clone https://github.com/Flushuine/simpleSB
-8. cd simpleSB
-9. python sb.py
+
+Tutorial menjalankan bot:
+1. cd simpleSB
+
+2. python sb.py
 
 <hr><br>
 Command : <br> 
@@ -17,8 +20,11 @@ speed       = Test Kecepatan Bot <br>
 spic <tag>  = Kirim Foto Profile yg di Tag <br>
 scover <tag>= Kirim Foto Cover yg di Tag <br>
 tagall      = Tag Semua Member dalam Group <br>
-ceksider    = Mengecek CCTV <br>
-offread     = Tampilkan CCTV <br>
+cek sider    = Mengecek sider <br>
+list sider     = Tampilkan list sider yang sudah terpantau dengan command "cek sider" <br>
+shutdown.   =  Mematikan bot <br>
+
+
 <hr>
 
 source : linepy by https://github.com/fadhiilrachman/
