@@ -55,11 +55,11 @@ while True:
                                             pref=['Sider Spotted','Another Sider']
                                             client.sendText(op.param1, str(random.choice(pref))+' '+Name)
                                     else:
-                                        pass
+                                            pass
                                 else:
-                                    pass
+                                        pass
                             except:
-                                pass
+                                    pass
 
                         elif "list sider" in msg.text.lower():
                             if msg.to in cctv['point']:
