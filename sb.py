@@ -47,7 +47,7 @@ while True:
                         elif "sider" in msg.text.lower():
                                 if msg.to in cctv['point']:
                                     cctv['cyduk'][msg.to]=False
-                                    client.sendText(receiver, cctv['sidermem'][msg.to])
+                                    client.sendText(receiver, "Sider Spotted:\n" + cctv['sidermem'][msg.to])
                                 else:
                                     client.sendText(msg.to, "Please scan your read point first")
                         else:
