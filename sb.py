@@ -37,8 +37,8 @@ while True:
                             client.sendText(receiver, "Done!")
                             try:
                                 del cctv['point'][msg.to]
-                                    del cctv['sidermem'][msg.to]
-                                    del cctv['cyduk'][msg.to]
+                                del cctv['sidermem'][msg.to]
+                                del cctv['cyduk'][msg.to]
                             except:
                                 pass
                             cctv['point'][receiver] = msg.id
