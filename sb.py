@@ -67,9 +67,6 @@ while True:
                                         pass
                                 except:
                                     pass
-
-                            else:
-                                pass
                     else:
                         pass
                 else:
