@@ -119,8 +119,16 @@ Line GainBot v0.1 (beta build)
                             elif text.lower() == 'tag all':
                                 group = client.getGroup(msg.to)
                                 nama = [contact.mid for contact in group.members]
-                                jml = len(nama)
-                                client.mention(msg.to, nama)           
+                                jml = len(nama)//100
+                                for a in range(jml+1):
+                                    txt = u''
+                                    s = 0
+                                    b = []
+                                    for i in group.members[a*100 : (a+1)*100]:
+                                        b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
+                                        s += 7
+                                        txt += u' '
+                                client.sendText(receiver, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONESS':b})}, contentType=0)
                                 client.sendText(receiver, "Members: "+str(jml))
                             elif text.lower() == 'cek sider':
                                 try:
