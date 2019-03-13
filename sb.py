@@ -34,17 +34,17 @@ while True:
                         may = client.getProfile().mid
                         if msg.text.lower() == "help":
                             client.sendText(receiver, """
-                            Available Commands:
-                            1. check sider < to spot siders >
-                            2. check speed < to check bot's speed >
-                            3. tag all < to tag all members >
+Available Commands:
+1. check sider < to spot siders >
+2. check speed < to check bot's speed >
+3. tag all < to tag all members >
 
-                            That's All (for now)
+That's All (for now)
                             
-                            ~ If you want to request more commands, please contact me @Lgd_d
-                            ~ If you want to contribute on this bot, please contact me @Lgd_d
+~ If you want to request more commands, please contact me @Lgd_d
+~ If you want to contribute on this bot, please contact me @Lgd_d
 
-                            Line GainBot v0.1 (beta build)
+Line GainBot v0.1 (beta build)
                             """)
                         elif msg.text.lower() == "check sider":
                             try:
@@ -119,6 +119,7 @@ while True:
                             elif text.lower() == 'tag all':
                                 group = client.getGroup(msg.to)
                                 nama = [contact.mid for contact in group.members]
+                                jml = len(nama)
                                 client.mention(msg.to, nama)           
                                 client.sendText(receiver, "Members: "+str(jml))
                             elif text.lower() == 'cek sider':
