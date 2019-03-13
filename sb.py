@@ -118,57 +118,57 @@ Line GainBot v0.1 (beta build)
                                     client.sendText(receiver, str(e))
                             elif text.lower() == 'tag all':
                                 group = client.getGroup(msg.to)
-                                    nama = [contact.mid for contact in group.members]
-                                    nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)//100
-                                    if jml <= 100:
-                                        client.mention(msg.to, nama)
-                                    if jml > 100 and jml < 200:
-                                        for i in range(0, 100):
-                                            nm1 += [nama[i]]
-                                            client.mention(msg.to, nm1)
-                                        for j in range(101, len(nama)):
-                                            nm2 += [nama[j]]
-                                            client.mention(msg.to, nm2)
-                                    if jml > 200 and jml < 300:
-                                        for i in range(0, 100):
-                                            nm1 += [nama[i]]
-                                            client.mention(msg.to, nm1)
-                                        for j in range(101, 200):
-                                            nm2 += [nama[j]]
-                                            client.mention(msg.to, nm2)
-                                        for k in range(201, len(nama)):
-                                            nm3 += [nama[k]]
-                                            client.mention(msg.to, nm3)
-                                    if jml > 300 and jml < 400:
-                                        for i in range(0, 100):
-                                            nm1 += [nama[i]]
-                                            client.mention(msg.to, nm1)
-                                        for j in range(101, 200):
-                                            nm2 += [nama[j]]
-                                            client.mention(msg.to, nm2)
-                                        for k in range(201, len(nama)):
-                                            nm3 += [nama[k]]
-                                            client.mention(msg.to, nm3)
-                                        for l in range(301, len(nama)):
-                                            nm4 += [nama[l]]
-                                            client.mention(msg.to, nm4)
-                                    if jml > 400 and jml < 501:
-                                        for i in range(0, 100):
-                                            nm1 += [nama[i]]
-                                            client.mention(msg.to, nm1)
-                                        for j in range(101, 200):
-                                            nm2 += [nama[j]]
-                                            client.mention(msg.to, nm2)
-                                        for k in range(201, len(nama)):
-                                            nm3 += [nama[k]]
-                                            client.mention(msg.to, nm3)
-                                        for l in range(301, len(nama)):
-                                            nm4 += [nama[l]]
-                                            client.mention(msg.to, nm4)
-                                        for m in range(401, len(nama)):
-                                            nm5 += [nama[m]]
-                                            client.mention(msg.to, nm5)             
-                                            client.sendText(receiver, "Members :"+str(jml))
+                                nama = [contact.mid for contact in group.members]
+                                nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)//100
+                                if jml <= 100:
+                                    client.mention(msg.to, nama)
+                                if jml > 100 and jml < 200:
+                                    for i in range(0, 100):
+                                        nm1 += [nama[i]]
+                                        client.mention(msg.to, nm1)
+                                    for j in range(101, len(nama)):
+                                        nm2 += [nama[j]]
+                                        client.mention(msg.to, nm2)
+                                if jml > 200 and jml < 300:
+                                    for i in range(0, 100):
+                                        nm1 += [nama[i]]
+                                        client.mention(msg.to, nm1)
+                                    for j in range(101, 200):
+                                        nm2 += [nama[j]]
+                                        client.mention(msg.to, nm2)
+                                    for k in range(201, len(nama)):
+                                        nm3 += [nama[k]]
+                                        client.mention(msg.to, nm3)
+                                if jml > 300 and jml < 400:
+                                    for i in range(0, 100):
+                                        nm1 += [nama[i]]
+                                        client.mention(msg.to, nm1)
+                                    for j in range(101, 200):
+                                        nm2 += [nama[j]]
+                                        client.mention(msg.to, nm2)
+                                    for k in range(201, len(nama)):
+                                        nm3 += [nama[k]]
+                                        client.mention(msg.to, nm3)
+                                    for l in range(301, len(nama)):
+                                        nm4 += [nama[l]]
+                                        client.mention(msg.to, nm4)
+                                if jml > 400 and jml < 501:
+                                    for i in range(0, 100):
+                                        nm1 += [nama[i]]
+                                        client.mention(msg.to, nm1)
+                                    for j in range(101, 200):
+                                        nm2 += [nama[j]]
+                                        client.mention(msg.to, nm2)
+                                    for k in range(201, len(nama)):
+                                        nm3 += [nama[k]]
+                                        client.mention(msg.to, nm3)
+                                    for l in range(301, len(nama)):
+                                        nm4 += [nama[l]]
+                                        client.mention(msg.to, nm4)
+                                    for m in range(401, len(nama)):
+                                        nm5 += [nama[m]]
+                                        client.mention(msg.to, nm5)             
+                                        client.sendText(receiver, "Members :"+str(jml))
                             elif text.lower() == 'cek sider':
                                 try:
                                     del cctv['point'][msg.to]
