@@ -128,7 +128,7 @@ Line GainBot v0.1 (beta build)
                                         b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
                                         s += 7
                                         txt += u' '
-                                client.sendText(receiver, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONESS':b})}, contentType=0)
+                                client.sendMessage(receiver, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONESS':b})}, contentType=0)
                                 client.sendText(receiver, "Members: "+str(jml))
                             elif text.lower() == 'cek sider':
                                 try:
