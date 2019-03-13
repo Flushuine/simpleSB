@@ -119,7 +119,7 @@ Line GainBot v0.1 (beta build)
                             elif text.lower() == 'tag all':
                                 group = client.getGroup(msg.to)
                                 nama = [contact.mid for contact in group.members]
-                                nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)//100
+                                nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
                                 if jml <= 100:
                                     client.mention(msg.to, nama)
                                 if jml > 100 and jml < 200:
