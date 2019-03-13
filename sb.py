@@ -46,17 +46,17 @@ while True:
                             Line GainBot v0.1 (beta build)
                             """)
                         elif msg.text.lower() == "check sider":
-                            try:
-                                del cctv['point'][msg.to]
-                                del cctv['sidermem'][msg.to]
-                                del cctv['cyduk'][msg.to]
-                            except:
-                                pass
-                            cctv['point'][msg.to] = msg.id
-                            cctv['sidermem'][msg.to] = ""
-                            cctv['cyduk'][msg.to]=True
                             seconds = 180;
                             for t in range(seconds):
+                                try:
+                                    del cctv['point'][msg.to]
+                                    del cctv['sidermem'][msg.to]
+                                    del cctv['cyduk'][msg.to]
+                                except:
+                                    pass
+                                cctv['point'][msg.to] = msg.id
+                                cctv['sidermem'][msg.to] = ""
+                                cctv['cyduk'][msg.to]=True
                                 seconds = seconds - t;
                                 time.sleep(1);    
                             if msg.to in cctv['point']:
