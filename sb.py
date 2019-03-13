@@ -46,22 +46,25 @@ while True:
                             Line GainBot v0.1 (beta build)
                             """)
                         elif msg.text.lower() == "check sider":
+                            try:
+                                del cctv['point'][msg.to]
+                                del cctv['sidermem'][msg.to]
+                                del cctv['cyduk'][msg.to]
+                            except:
+                                pass
+                            cctv['point'][msg.to] = msg.id
+                            cctv['sidermem'][msg.to] = ""
+                            cctv['cyduk'][msg.to]=True
+                            ti = 1;
+                        elif ti == 1:
                             seconds = 180;
                             for t in range(seconds):
-                                try:
-                                    del cctv['point'][msg.to]
-                                    del cctv['sidermem'][msg.to]
-                                    del cctv['cyduk'][msg.to]
-                                except:
-                                    pass
-                                cctv['point'][msg.to] = msg.id
-                                cctv['sidermem'][msg.to] = ""
-                                cctv['cyduk'][msg.to]=True
                                 seconds = seconds - t;
-                                #time.sleep(1);    
+                                time.sleep(1);    
                             if msg.to in cctv['point']:
                                 cctv['cyduk'][msg.to]=False
                                 client.sendText(msg.to, cctv['sidermem'][msg.to])
+                                ti = 0;
                             else:
                                 pass
                         elif msg.text.lower() == 'check speed':
