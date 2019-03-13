@@ -66,7 +66,7 @@ while True:
                                 except Exception as e:
                                     client.sendText(receiver, str(e))
                             elif text.lower() == 'tagall':
-                                group = client.getGroup(msg.to)s
+                                group = client.getGroup(msg.to)
                                 nama = [contact.mid for contact in group.members]
                                 client.mention(msg.to, nama)           
                                 client.sendText(receiver, "Members :"+str(jml))
