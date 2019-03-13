@@ -28,6 +28,7 @@ while True:
                 msg_id = msg.id
                 receiver = msg.to
                 sender = msg._from
+                ti = 0
                 if msg.text != None:
                     if msg.toType == 2:
                         may = client.getProfile().mid
