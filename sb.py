@@ -58,7 +58,7 @@ while True:
                                 cctv['sidermem'][msg.to] = ""
                                 cctv['cyduk'][msg.to]=True
                                 seconds = seconds - t;
-                                time.sleep(1);    
+                                #time.sleep(1);    
                             if msg.to in cctv['point']:
                                 cctv['cyduk'][msg.to]=False
                                 client.sendText(msg.to, cctv['sidermem'][msg.to])
