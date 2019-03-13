@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from linepy import *
 import json, time, random, sys
+import time
 
 client = LineClient()
 #client = LineClient(authToken='AUTH TOKEN')
@@ -23,10 +24,32 @@ while True:
         for op in ops:
             if op.type == 26:
                 msg = op.message
+                text = msg.text
+                msg_id = msg.id
+                receiver = msg.to
+                sender = msg._from
                 if msg.text != None:
                     if msg.toType == 2:
                         may = client.getProfile().mid
-
+                        if msg.text.lower() == "check sider":
+                            try:
+                                del cctv['point'][msg.to]
+                                del cctv['sidermem'][msg.to]
+                                del cctv['cyduk'][msg.to]
+                            except:
+                                pass
+                            cctv['point'][msg.to] = msg.id
+                            cctv['sidermem'][msg.to] = ""
+                            cctv['cyduk'][msg.to]=True
+                            seconds = 180;
+                            for t in range(seconds):
+                                seconds = seconds - t;
+                                time.sleep(1);    
+                            if msg.to in cctv['point']:
+                                cctv['cyduk'][msg.to]=False
+                                client.sendText(msg.to, cctv['sidermem'][msg.to])
+                            else:
+                                pass
                     else:
                         pass
                 else:
@@ -118,4 +141,4 @@ while True:
             poll.setRevision(op.revision)
             
     except Exception as e:
-client.log("[SINGLE_TRACE] ERROR : " + str(e))
+            client.log("[SINGLE_TRACE] ERROR : " + str(e))
