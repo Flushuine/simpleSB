@@ -31,7 +31,21 @@ while True:
                 if msg.text != None:
                     if msg.toType == 2:
                         may = client.getProfile().mid
-                        if msg.text.lower() == "check sider":
+                        if msg.text.lower() == "help":
+                            client.sendText(receiver, """
+                            Available Commands:
+                            1. check sider < to spot siders >
+                            2. check speed < to check bot's speed >
+                            3. tag all < to tag all members >
+
+                            That's All (for now)
+                            
+                            ~ If you want to request more commands, please contact me @Lgd_d
+                            ~ If you want to contribute on this bot, please contact me @Lgd_d
+
+                            Line GainBot v0.1 (beta build)
+                            """)
+                        elif msg.text.lower() == "check sider":
                             try:
                                 del cctv['point'][msg.to]
                                 del cctv['sidermem'][msg.to]
@@ -50,6 +64,16 @@ while True:
                                 client.sendText(msg.to, cctv['sidermem'][msg.to])
                             else:
                                 pass
+                        elif msg.text.lower() == 'check speed':
+                                start = time.time()
+                                client.sendText(receiver, "TestSpeed")
+                                elapsed_time = time.time() - start
+                                client.sendText(receiver, "%s detik" % (elapsed_time))
+                        elif msg.text.lower() == 'tag all':
+                                group = client.getGroup(msg.to)
+                                nama = [contact.mid for contact in group.members]
+                                client.mention(msg.to, nama)           
+                                client.sendText(receiver, "Members: "+str(jml))
                     else:
                         pass
                 else:
@@ -88,11 +112,11 @@ while True:
                                     client.sendImageWithURL(receiver, a)
                                 except Exception as e:
                                     client.sendText(receiver, str(e))
-                            elif text.lower() == 'tagall':
+                            elif text.lower() == 'tag all':
                                 group = client.getGroup(msg.to)
                                 nama = [contact.mid for contact in group.members]
                                 client.mention(msg.to, nama)           
-                                client.sendText(receiver, "Members :"+str(jml))
+                                client.sendText(receiver, "Members: "+str(jml))
                             elif text.lower() == 'cek sider':
                                 try:
                                     del cctv['point'][msg.to]
