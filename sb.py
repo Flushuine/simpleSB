@@ -60,8 +60,7 @@ Line GainBot v0.1 (beta build)
                         elif msg.text.lower() == "list sider":
                             if msg.to in cctv['point']:
                                 cctv['cyduk'][msg.to]=False
-                                #client.sendText(msg.to, cctv['sidermem'][msg.to])
-                                client.sendText(receiver, cctv['sidermem'][msg.to])
+                                client.sendText(msg.to, cctv['sidermem'][msg.to])
                             else:
                                 client.sendText(receiver, "Nyalain dulu sider checkernya")
                             #ti = 1
