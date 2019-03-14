@@ -56,16 +56,15 @@ Line GainBot v0.1 (beta build)
                             cctv['point'][msg.to] = msg.id
                             cctv['sidermem'][msg.to] = ""
                             cctv['cyduk'][msg.to]=True
-                            ti = 1
-                        elif ti == 1:
-                            seconds = 180;
+                            #ti = 1
+                        elif msg.to in cctv['point']:#ti == 1:
+                            '''seconds = 180;
                             for t in range(seconds):
                                 seconds = seconds - t
-                                time.sleep(1);    
-                            if msg.to in cctv['point']:
-                                cctv['cyduk'][msg.to]=False
-                                client.sendText(msg.to, cctv['sidermem'][msg.to])
-                                ti = 0
+                                time.sleep(1);  '''  
+                            cctv['cyduk'][msg.to]=False
+                            client.sendText(msg.to, cctv['sidermem'][msg.to])
+                                #ti = 0
                             else:
                                 pass
                         elif msg.text.lower() == 'check speed':
