@@ -46,7 +46,7 @@ That's All (for now)
 
 Line GainBot v0.1 (beta build)
                             """)
-                        elif msg.text.lower() == "cek sider":
+                        elif msg.text.lower() == "check sider":
                             try:
                                 del cctv['point'][msg.to]
                                 del cctv['sidermem'][msg.to]
@@ -62,7 +62,7 @@ Line GainBot v0.1 (beta build)
                                 cctv['cyduk'][msg.to]=False
                                 client.sendText(msg.to, cctv['sidermem'][msg.to])
                             else:
-                                client.sendText(receiver, "Nyalain dulu sider checkernya")
+                                client.sendText(receiver, "Please type 'check sider' first!")
                             #ti = 1
                         #elif msg.text.lower() == "list sider":
                          #   if msg.to in cctv['point']:#ti == 1:
@@ -208,8 +208,8 @@ Line GainBot v0.1 (beta build)
                                 pass
                             else:
                                 cctv['sidermem'][op.param1] += "\n~ " + Name
-                                pref=['Sider Spotted','Another Sider']
-                                client.sendText(op.param1, str(random.choice(pref))+' '+Name)
+                                #pref=['Sider Spotted','Another Sider']
+                                client.sendText(op.param1, 'Sider Spotted '+Name)
                         else:
                             pass
                     else:
