@@ -53,18 +53,21 @@ Line GainBot v0.1 (beta build)
                                 del cctv['cyduk'][msg.to]
                             except:
                                 pass
-                            cctv['point'][msg.to] = msg.id
-                            cctv['sidermem'][msg.to] = ""
-                            cctv['cyduk'][msg.to]=True
+                            cctv['point'][receiver] = msg.id
+                            cctv['sidermem'][receiver] = ""
+                            cctv['cyduk'][receiver]=True
                             #ti = 1
-                        elif msg.to in cctv['point']:#ti == 1:
+                        elif msg.text.lower() == "list sider":
+                            if msg.to in cctv['point']:#ti == 1:
                             '''seconds = 180;
                             for t in range(seconds):
                                 seconds = seconds - t
                                 time.sleep(1);  '''  
-                            cctv['cyduk'][msg.to]=False
-                            client.sendText(msg.to, cctv['sidermem'][msg.to])
+                                cctv['cyduk'][msg.to]=False
+                                client.sendText(msg.to, cctv['sidermem'][msg.to])
                                 #ti = 0
+                            else:
+                                client.sendText(receiver, "Please type 'check sider' first!")
                         elif msg.text.lower() == 'check speed':
                                 start = time.time()
                                 client.sendText(receiver, "TestSpeed")
