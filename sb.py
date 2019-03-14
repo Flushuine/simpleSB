@@ -65,8 +65,6 @@ Line GainBot v0.1 (beta build)
                             cctv['cyduk'][msg.to]=False
                             client.sendText(msg.to, cctv['sidermem'][msg.to])
                                 #ti = 0
-                            else:
-                                pass
                         elif msg.text.lower() == 'check speed':
                                 start = time.time()
                                 client.sendText(receiver, "TestSpeed")
