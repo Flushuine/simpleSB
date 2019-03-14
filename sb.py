@@ -53,9 +53,9 @@ Line GainBot v0.1 (beta build)
                                 del cctv['cyduk'][msg.to]
                             except:
                                 pass
-                            cctv['point'][msg.to] = msg.id
-                            cctv['sidermem'][msg.to] = ""
-                            cctv['cyduk'][msg.to]=True
+                            cctv['point'][receiver] = msg.id
+                            cctv['sidermem'][receiver] = ""
+                            cctv['cyduk'][receiver]=True
 
                         elif msg.text.lower() == "list sider":
                             if msg.to in cctv['point']:
