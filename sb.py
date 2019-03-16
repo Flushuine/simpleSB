@@ -222,9 +222,9 @@ That's All (for now)
                 try:
                     group_id=op.param1
                     # Accept group invitation
-                    line.acceptGroupInvitation(group_id)
+                    client.acceptGroupInvitation(group_id)
                 except Exception as e:
-                    line.log("[NOTIFIED_INVITE_INTO_GROUP] ERROR : " + str(e))
+                    client.log("[NOTIFIED_INVITE_INTO_GROUP] ERROR : " + str(e))
             else:
                 pass
                 
