@@ -218,8 +218,24 @@ That's All (for now)
                 except:
                     pass
 
+            elif op.type == OpType.NOTIFIED_INVITE_INTO_GROUP:
+                try:
+                    group_id=op.param1
+                    # Accept group invitation
+                    line.acceptGroupInvitation(group_id)
+                except Exception as e:
+                    line.log("[NOTIFIED_INVITE_INTO_GROUP] ERROR : " + str(e))
             else:
                 pass
+                
+         
+
+# Add function to OEPoll
+oepoll.addOpInterruptWithDict({
+    OpType.RECEIVE_MESSAGE: RECEIVE_MESSAGE,
+    OpType.NOTIFIED_INVITE_INTO_GROUP: NOTIFIED_INVITE_INTO_GROUP
+})
+
 
             # Don't remove this line, if you wan't get error soon!
             poll.setRevision(op.revision)
