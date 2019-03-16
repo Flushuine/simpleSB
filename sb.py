@@ -32,21 +32,22 @@ while True:
                 if msg.text != None:
                     if msg.toType == 2:
                         may = client.getProfile().mid
-                        if msg.text.lower() == "help":
+                        if msg.text.lower() == "!help":
                             client.sendText(receiver, """
 Available Commands:
-1. check sider < to spot siders >
-2. check speed < to check bot's speed >
-3. tag all < to tag all members >
+1. !cs < to spot siders >
+2. !speed < to check bot's speed >
+3. !ls < to make list siders >
+4. !help < to see available commands >
 
 That's All (for now)
                             
 ~ If you want to request more commands, please contact me @Lgd_d
 ~ If you want to contribute on this bot, please contact me @Lgd_d
 
-Line GainBot v0.1 (beta build)
+
                             """)
-                        elif msg.text.lower() == "check sider":
+                        elif msg.text.lower() == "!cs":
                             try:
                                 del cctv['point'][msg.to]
                                 del cctv['sidermem'][msg.to]
@@ -57,7 +58,7 @@ Line GainBot v0.1 (beta build)
                             cctv['sidermem'][receiver] = ""
                             cctv['cyduk'][receiver]=True
 
-                        elif msg.text.lower() == "list sider":
+                        elif msg.text.lower() == "!ls":
                             if msg.to in cctv['point']:
                                 cctv['cyduk'][msg.to]=False
                                 client.sendText(msg.to, cctv['sidermem'][msg.to])
@@ -75,16 +76,16 @@ Line GainBot v0.1 (beta build)
                                 #ti = 0
                             #else:
                              #   client.sendText(receiver, "Please type 'check sider' first!")
-                        elif msg.text.lower() == 'check speed':
+                        elif msg.text.lower() == '!speed':
                                 start = time.time()
-                                client.sendText(receiver, "TestSpeed")
+                                client.sendText(receiver, "Bot Speed Test")
                                 elapsed_time = time.time() - start
                                 client.sendText(receiver, "%s detik" % (elapsed_time))
-                        elif msg.text.lower() == 'tag all':
-                                group = client.getGroup(msg.to)
-                                nama = [contact.mid for contact in group.members]
-                                client.mention(msg.to, nama)           
-                                client.sendText(receiver, "Members: "+str(jml))
+                        #elif msg.text.lower() == 'tag all':
+                                #group = client.getGroup(msg.to)
+                                #nama = [contact.mid for contact in group.members]
+                                #client.mention(msg.to, nama)           
+                                #client.sendText(receiver, "Members: "+str(jml))
                     else:
                         pass
                 else:
