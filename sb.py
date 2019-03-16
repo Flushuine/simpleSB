@@ -228,14 +228,6 @@ That's All (for now)
             else:
                 pass
                 
-         
-
-# Add function to OEPoll
-oepoll.addOpInterruptWithDict({
-    OpType.RECEIVE_MESSAGE: RECEIVE_MESSAGE,
-    OpType.NOTIFIED_INVITE_INTO_GROUP: NOTIFIED_INVITE_INTO_GROUP
-})
-
 
             # Don't remove this line, if you wan't get error soon!
             poll.setRevision(op.revision)
