@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from linepy import *VxKgw3rDTofK697pgpyqnWXJQVKW
+from linepy import *
 import json, time, random, sys
 import time
 
