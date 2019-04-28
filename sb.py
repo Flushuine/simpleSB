@@ -3,8 +3,8 @@ from linepy import *
 import json, time, random, sys
 import time
 
-#client = LineClient()
-client = LineClient(authToken='muDj3Km3HdyCnCXr4lJeqgh8/03Hd5BlBhLreEGqNiSQFYI5o9unZTDJwUBQeUSs1mKHInYXi9WX57uHpuaGTzX/VFKUeaM6eppGSixnN4sOpB/10ctvmvxyAL0qHctNh7UEmSyX18k1LtbuM1khHnPpok1O6QNHjuH/VxKgw3rDTofK697pgpyqnWXJQVKW')
+client = LineClient()
+#client = LineClient(authToken='muDj3Km3HdyCnCXr4lJeqgh8/03Hd5BlBhLreEGqNiSQFYI5o9unZTDJwUBQeUSs1mKHInYXi9WX57uHpuaGTzX/VFKUeaM6eppGSixnN4sOpB/10ctvmvxyAL0qHctNh7UEmSyX18k1LtbuM1khHnPpok1O6QNHjuH/VxKgw3rDTofK697pgpyqnWXJQVKW')
 client.log("Auth Token : " + str(client.authToken))
 
 channel = LineChannel(client)
