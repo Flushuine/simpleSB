@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from linepy import *
+from linepy import *VxKgw3rDTofK697pgpyqnWXJQVKW
 import json, time, random, sys
 import time
 
-client = LineClient()
-#client = LineClient(authToken='muDj3Km3HdyCnCXr4lJeqgh8/03Hd5BlBhLreEGqNiSQFYI5o9unZTDJwUBQeUSs1mKHInYXi9WX57uHpuaGTzX/VFKUeaM6eppGSixnN4sOpB/10ctvmvxyAL0qHctNh7UEmSyX18k1LtbuM1khHnPpok1O6QNHjuH/VxKgw3rDTofK697pgpyqnWXJQVKW')
+#client = LineClient()
+client = LineClient(authToken='EEcQInnfO7hOzckoT5Z3.Zirap+Cd4SD+XgEOzbAoeW.QHkCrejhCwfOCQZpcrO8O7VeBZMS6KLW2G/cIZvu5Sg=')
 client.log("Auth Token : " + str(client.authToken))
 
 channel = LineChannel(client)
